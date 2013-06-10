@@ -23,6 +23,7 @@
 		56A9F68C1764766200C2240D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56A9F6671764766200C2240D /* Foundation.framework */; };
 		56A9F6941764766200C2240D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 56A9F6921764766200C2240D /* InfoPlist.strings */; };
 		56A9F6971764766200C2240D /* TestBluetooth02Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 56A9F6961764766200C2240D /* TestBluetooth02Tests.m */; };
+		56A9F6A1176476C100C2240D /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56A9F6A0176476C100C2240D /* GameKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,7 @@
 		56A9F6931764766200C2240D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		56A9F6951764766200C2240D /* TestBluetooth02Tests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestBluetooth02Tests.h; sourceTree = "<group>"; };
 		56A9F6961764766200C2240D /* TestBluetooth02Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestBluetooth02Tests.m; sourceTree = "<group>"; };
+		56A9F6A0176476C100C2240D /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +67,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				56A9F6A1176476C100C2240D /* GameKit.framework in Frameworks */,
 				56A9F6661764766200C2240D /* UIKit.framework in Frameworks */,
 				56A9F6681764766200C2240D /* Foundation.framework in Frameworks */,
 				56A9F66A1764766200C2240D /* CoreGraphics.framework in Frameworks */,
@@ -87,6 +90,7 @@
 		56A9F6591764766200C2240D = {
 			isa = PBXGroup;
 			children = (
+				56A9F6A0176476C100C2240D /* GameKit.framework */,
 				56A9F66B1764766200C2240D /* TestBluetooth02 */,
 				56A9F68F1764766200C2240D /* TestBluetooth02Tests */,
 				56A9F6641764766200C2240D /* Frameworks */,
@@ -334,7 +338,8 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Kenichiro Aizawa (S2SAEGVDF9)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Kenichiro Aizawa (S2SAEGVDF9)";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -347,8 +352,10 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "5EC265E2-9226-49EB-9787-25F7F409709F";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "5EC265E2-9226-49EB-9787-25F7F409709F";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -365,14 +372,17 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Kenichiro Aizawa (S2SAEGVDF9)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Kenichiro Aizawa (S2SAEGVDF9)";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PROVISIONING_PROFILE = "5EC265E2-9226-49EB-9787-25F7F409709F";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "5EC265E2-9226-49EB-9787-25F7F409709F";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -453,6 +463,7 @@
 				56A9F69C1764766200C2240D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		56A9F69D1764766200C2240D /* Build configuration list for PBXNativeTarget "TestBluetooth02Tests" */ = {
 			isa = XCConfigurationList;
@@ -461,6 +472,7 @@
 				56A9F69F1764766200C2240D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
