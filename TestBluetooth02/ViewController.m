@@ -28,7 +28,7 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     [self setParts];
-    [self setConnect];
+    [self setConnect:NO];
 }
 
 - (void)didReceiveMemoryWarning
@@ -76,9 +76,14 @@
     [canvasView addSubview:receptionButton];
 }
 
-- (void)setConnect {
+// YESならServerモード　NOならClientモード
+- (void)setConnect:(BOOL)sessionMode {
     
-    _session = [[GKSession alloc] initWithSessionID:SESSION_ID displayName:nil sessionMode:GKSessionModeClient];
+    if (sessionMode) {
+        _session = [[GKSession alloc] initWithSessionID:SESSION_ID displayName:nil sessionMode:GKSessionModeServer];
+    } else {
+        _session = [[GKSession alloc] initWithSessionID:SESSION_ID displayName:nil sessionMode:GKSessionModeClient];
+    }
     
     // Delegateを指定する
     _session.delegate = self;
@@ -87,7 +92,7 @@
     // 通信を待ち受ける状態にする
     _session.available = YES;
     
-    _fServer = NO;
+    _fServer = sessionMode;
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
@@ -99,17 +104,8 @@
 }
 
 - (void)sendMessage:(id)sender {
-        
-    self.session = [[GKSession alloc] initWithSessionID:SESSION_ID displayName:nil sessionMode:GKSessionModeServer];
-    
-    // Delegateを指定する
-    _session.delegate = self;
-    // 受信データを受け取るオブジェクトを指定します
-    [self.session setDataReceiveHandler:self withContext:nil];
-    // 通信を待ち受ける状態にする
-    _session.available = YES;
-    
-    _fServer = YES;
+
+    [self setConnect:YES];
 }
 
 - (void)receptionMessage:(id)sender {
@@ -166,6 +162,8 @@
         {
             // 他のPeerが切断されたとき
             _stateLabel.text = [NSString stringWithFormat:@"disconnected"];
+            [_session disconnectFromAllPeers];
+            [self setConnect:NO];
             break;
         }
     }
